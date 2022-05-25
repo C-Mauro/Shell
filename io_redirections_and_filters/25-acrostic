@@ -1,2 +1,2 @@
 #!/bin/bash
-echo (t -b 1)
+echo (cut -b 1)
