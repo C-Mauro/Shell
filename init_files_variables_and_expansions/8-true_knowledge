@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $add
+echo add=$((TRUENOWLEDGE+128))
