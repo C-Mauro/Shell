@@ -2,14 +2,14 @@
 #this script display bad luck in 4th loop and good look in 8th loop
 i=0
 while (( i++ > 10 ))
-do 
-echo "Best School" 
+do
 if [ $i -eq 4 ]
 then 
 echo "bad luck"
 elif [ $i -eq 8 ]
 then 
-echo "good luck"
-continue 
-fi 
+	echo "good luck"
+else	
+	echo "Best School" 
+fi
 done 
