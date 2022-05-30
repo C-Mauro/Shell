@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#This script repeat Best School 10times
+counter=1
+until  [ $counter -gt 10 ]
+do
+echo "Best School"
+((counter++))
+done 
