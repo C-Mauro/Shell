@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #This script is a clock
-h=1
+h=0
 while (( h++ < 12 ))
 do 
 	echo "hour:$h"
-m=1
+m=0
 	while (( m++ < 59 ))
 	do 
 		echo "$m"
