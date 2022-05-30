@@ -2,5 +2,5 @@
 #This script display the content of the current directory, list format, only the part after the first dash.
 for i in * 
 do 
-	echo "$i"|rev |cut -d "-"|rev 
+	echo "$i"|rev |cut -f1 -d "-"|rev 
 done 
