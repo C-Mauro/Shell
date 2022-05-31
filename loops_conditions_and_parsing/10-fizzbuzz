@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#This scrpt check multiple
+
+i=0
+for i in {1..100}
+do
+	if [ $(( i % 3 )) ]
+	then 
+		 
+		if [ $(( i % 5 )) ]
+		then 
+		echo "FizzBuzz" 
+	else 
+		echo "Fizz" 
+		fi
+	
+		if [ $(( i % 5 )) ]
+		then 
+			echo " buzz"
+		else "$i"
+		fi
+		fi 
+	done
