@@ -3,9 +3,9 @@
 
 if [[ -f school ]]
 then 
-	echo "school file does not exist"
-else 
 	echo "school file exists"
+else 
+	echo "school file does not exist"
 
 	if [[ -s school ]]
 	then
