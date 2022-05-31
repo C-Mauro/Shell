@@ -3,15 +3,15 @@
 
 if [[ -f school ]]
 then 
-	echo "school file exist"
+	echo "school file does not exist"
 else 
-	echo "school files does not exist"
+	echo "school file exists"
 
 	if [[ -s school ]]
 	then
-		echo "school file is empty"
-	else 
 		echo "school file is not empty"
+	else 
+		echo "school file is empty"
 
 		if [[ -d school ]]
 		then 
