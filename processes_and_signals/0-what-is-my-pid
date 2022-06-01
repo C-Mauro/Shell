@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this scrip display its own PID 
+pgrep -c -u root
