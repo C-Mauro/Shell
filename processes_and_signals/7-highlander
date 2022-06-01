@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#This script display a string with sleep 2 and other string when receiving a SIGTERM
+
+trap "echo I am invincible!!!" SIGTERM
+while true 
+do 
+echo "To infinity and beyond"
+sleep 2
+done 
