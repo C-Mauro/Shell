@@ -4,16 +4,16 @@
 case "$1" in 
 
 start)
-./manage_my_process "$1"
+echo "manage_my_process started"
+	./manage_my_process "$1"
 touch /var/run/my_process.pid 
-  echo "manage_my_process started"
   echo $! > /var/run/my_process.pid
 ;;
 
 stop) 
+	echo "manage_my_process stopped"
 	kill -9 "$(cat /var/run/my_process.pid)"
 	rm /var/run/my_process.pid
-echo "manage_my_process stopped"
 ;;
 
 restart) 
