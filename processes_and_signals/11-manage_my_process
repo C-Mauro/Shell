@@ -4,22 +4,27 @@
 case "$1" in 
 
 start)
-./manage_my_process
-touch /var/run/my_process.piid 
+./manage_my_process $1
+touch /var/run/my_process.pid 
   echo "manage_my_process started"
   echo $! > /var/run/my_process.pid
 ;;
 
 stop) 
-	kill -9 $! 
+	kill -9 $(cat /var/run/my_process.pid)
 	rm /var/run/my_process.pid
 echo "manage_my_process stopped"
 ;;
 
 restart) 
-rm /var/run/my_process.pid
 echo "manage_my_process restarted"
+kill -9 $(cat /var/run/my_process.pid)
+rm /var/run/my_process.pid
+./manage_my_process $1
+touch /var/run/my_process.pid
+echo $! > /var/run/my_process.pid
 ;;
+
 *)
 	echo "Usage: manage_my_process {start|stop|restart}"
 	;;
