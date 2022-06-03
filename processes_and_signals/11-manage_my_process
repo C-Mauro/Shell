@@ -2,18 +2,25 @@
 #This script start, stop and restarts the process in manage_my_process.
 
 case "$1" in 
+
 start)
-touch /var/run/my_process.pid 
-echo "manage_my_process started"
 ./manage_my_process
+touch /var/run/my_process.piid 
+  echo "manage_my_process started"
+  echo $! > /var/run/my_process.pid
 ;;
+
 stop) 
-pkill -|f "/var/run/my_process.pid"
-rm /var/run/my_process.pid
+	kill -9 $! 
+	rm /var/run/my_process.pid
 echo "manage_my_process stopped"
 ;;
+
 restart) 
 rm /var/run/my_process.pid
 echo "manage_my_process restarted"
 ;;
+*)
+	echo "Usage: manage_my_process {start|stop|restart}"
+	;;
 esac 
