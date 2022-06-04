@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 #This script don't love u.
 touch /var/run/myscript.pid
-trap 'echo I hate the kill command' SIGTERM
 trap 'echo Y U no love me?!' SIGINT
 trap 'rm  /var/run/myscript.pid' SIGQUIT SIGTERM
 while true 
 	do
 		trap 'echo I hate the kill command' SIGTERM
-		trap 'rm  /var/run/myscript.pid' SIGQUIT SIGTERM
 echo 'To infinity and beyond'
 sleep 2
 done 
