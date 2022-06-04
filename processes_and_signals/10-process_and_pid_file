@@ -6,6 +6,7 @@ trap 'echo Y U no love me?!' SIGINT
 trap 'rm  /var/run/myscript.pid' SIGQUIT SIGTERM
 while true 
 	do
+		trap 'echo I hate the kill command' SIGTERM
 echo 'To infinity and beyond'
 sleep 2
 done 
