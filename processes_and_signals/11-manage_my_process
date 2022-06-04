@@ -5,10 +5,10 @@ case "$1" in
 
 start)
 echo "manage_my_process started"
-	./manage_my_process "$1"
 touch /var/run/my_process.pid 
   echo $! > /var/run/my_process.pid
-;;
+./manage_my_process "$1"
+  ;;
 
 stop) 
 	echo "manage_my_process stopped"
@@ -20,9 +20,9 @@ restart)
 echo "manage_my_process restarted"
 kill -9 "$(cat /var/run/my_process.pid)"
 rm /var/run/my_process.pid
-./manage_my_process "$1"
 touch /var/run/my_process.pid
 echo $! > /var/run/my_process.pid
+./manage_my_process "$1"
 ;;
 
 *)
