@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #This script don't love u.
 touch /var/run/myscript.pid
-trap "echo Y U no love me?!" SIGINT
-trap "echo I hate the kill command" SIGTERM
-trap "rm  /var/run/myscript.pid" SIGQUIT SIGTERM
+trap 'echo" Y U no love me?!"' SIGINT0
+trap 'echo "I hate the kill command"' 15
+trap "rm  /var/run/myscript.pid" 3 15	
 
 while true 
 	do
